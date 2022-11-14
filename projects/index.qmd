@@ -1,0 +1,7 @@
+---
+title: "Create a new post"
+toc: true
+description: "Add to your blog using this workflow."
+---
+
+## `/posts` folder

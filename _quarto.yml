@@ -3,16 +3,22 @@ project:
   output-dir: docs
 
 website:
-  title: "Quarto-website-test"
+  title: "XXX My Name XXX"
   navbar:
+    pinned: true
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - text: "About"  
+        file: about.qmd
+      - text: "Projects"
+        file: projects.qmd
+    right:
+      - icon: github
+        href: https://github.com/
+    page-navigation: true
 
 format:
   html:
-    theme: default
+    theme: [litera, styles.scss]
     css: styles.css
     toc: true
 

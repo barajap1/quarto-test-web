@@ -1,0 +1,9 @@
+---
+title: "projects"
+listing:
+  id: projects-listings
+  contents: projects
+  sort: "title asc"
+  type: default
+
+---

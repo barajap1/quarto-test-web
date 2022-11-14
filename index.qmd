@@ -1,10 +1,23 @@
 ---
-title: "Quarto-website-test"
+title: "My Portfolio website"
+subtitle: "Thank you for visitng"
+image: IMG_5117.png
+
+about:
+  template: jolla
+  links:
+    - icon: twitter
+      text: MytwitterhandleXXX
+      href: https://twitter.com/
+    - icon: linkedin
+      text: MylinkedIn
+      href: https://linkedin.com/in/
+    - icon: github
+      text: mygithubhandle
+      href: https://github.com/
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+In this website I will showcase some the projects I have worked on as well some of the different things I enjoy doing
 
 ```{r}
 1 + 1
