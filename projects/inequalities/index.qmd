@@ -16,6 +16,11 @@ We will start off by loading the `UCBAdmissions` dataset, which is included in b
 # Loading UCBAdmissions dataset
 data(UCBAdmissions)
 ```
+```{r warning = FALSE, error = FALSE, message = FALSE}
+# Install necessary packages
+install.packages(c("forcats","scales","ggplot2","dplyr", "broom","pander", "rmarkdown"))
+```
+
 
 Printing the dataset to the console:
 
