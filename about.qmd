@@ -8,10 +8,15 @@ I do XXXX
 
 I studied XXXX at ZZZ university
 
-```{r}
+```{r echo = FALSE}
 1 + 1
 ```
 
 ```{python}
 1 + 1
 ```
+
+```{r}
+library(reticulate)
+```
+
