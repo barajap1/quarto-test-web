@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Pablo">
+<meta name="dcterms.date" content="2022-11-19">
+
+<title>XXX My Name XXX - Gender Bias in Graduate Admissions</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">XXX My Name XXX</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">About</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.html">Projects</a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#berkeley" id="toc-berkeley" class="nav-link active" data-scroll-target="#berkeley">Berkeley</a></li>
+  <li><a href="#acceptance-rate-for-men-and-women" id="toc-acceptance-rate-for-men-and-women" class="nav-link" data-scroll-target="#acceptance-rate-for-men-and-women">Acceptance rate for men and women</a></li>
+  <li><a href="#visualizing-the-discrepancy" id="toc-visualizing-the-discrepancy" class="nav-link" data-scroll-target="#visualizing-the-discrepancy">Visualizing the discrepancy</a></li>
+  <li><a href="#acceptance-rate-by-department" id="toc-acceptance-rate-by-department" class="nav-link" data-scroll-target="#acceptance-rate-by-department">Acceptance rate by department</a></li>
+  <li><a href="#alternative-explanations" id="toc-alternative-explanations" class="nav-link" data-scroll-target="#alternative-explanations">Alternative explanations</a></li>
+  <li><a href="#binary-logistic-regression-part-i" id="toc-binary-logistic-regression-part-i" class="nav-link" data-scroll-target="#binary-logistic-regression-part-i">Binary logistic regression: part i</a></li>
+  <li><a href="#binary-logistic-regression-part-ii" id="toc-binary-logistic-regression-part-ii" class="nav-link" data-scroll-target="#binary-logistic-regression-part-ii">Binary logistic regression: part ii</a></li>
+  <li><a href="#behold-simpsons-paradox" id="toc-behold-simpsons-paradox" class="nav-link" data-scroll-target="#behold-simpsons-paradox">Behold Simpson’s paradox</a></li>
+  <li><a href="#bias-or-discrimination" id="toc-bias-or-discrimination" class="nav-link" data-scroll-target="#bias-or-discrimination">Bias or discrimination?</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Gender Bias in Graduate Admissions</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Pablo </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 19, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="berkeley" class="level2">
+<h2 class="anchored" data-anchor-id="berkeley">Berkeley</h2>
+<p>In 1973, The University of California - Berkeley was one of the top-ranked universities in the United States. As such Berkeley attracted thousands of applicants to its graduate school. But how many made the cut?</p>
+<p>We will start off by loading the <code>UCBAdmissions</code> dataset, which is included in base R. This shows the number of students male and female who were admitted or rejected from the six largest departments at Berkeley. Since the dataset takes the unwieldly form of a three-dimensional array, we will convert it to tidy format using the <code>tidy</code> function from the <code>tidytext</code> package. Then we will be ready to start doing some analysis.</p>
+<!-- ![](Images/UCB.png) -->
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading UCBAdmissions dataset</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(UCBAdmissions)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Printing the dataset to the console:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 12%">
+<col style="width: 9%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td style="text-align: center;">Dept</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">D</td>
+<td style="text-align: center;">E</td>
+<td style="text-align: center;">F</td>
+</tr>
+<tr class="even">
+<td>Admit</td>
+<td>Gender</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>Admitted</td>
+<td>Male</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">512</td>
+<td style="text-align: center;">353</td>
+<td style="text-align: center;">120</td>
+<td style="text-align: center;">138</td>
+<td style="text-align: center;">53</td>
+<td style="text-align: center;">22</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Female</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">89</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">202</td>
+<td style="text-align: center;">131</td>
+<td style="text-align: center;">94</td>
+<td style="text-align: center;">24</td>
+</tr>
+<tr class="odd">
+<td>Rejected</td>
+<td>Male</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">313</td>
+<td style="text-align: center;">207</td>
+<td style="text-align: center;">205</td>
+<td style="text-align: center;">279</td>
+<td style="text-align: center;">138</td>
+<td style="text-align: center;">351</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Female</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">19</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">391</td>
+<td style="text-align: center;">244</td>
+<td style="text-align: center;">299</td>
+<td style="text-align: center;">317</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading broom package</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Converting UCBAdmissions to tidy format</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>ucb_tidy <span class="ot">&lt;-</span> <span class="fu">tidy</span>(UCBAdmissions)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Printing the dataset to the console:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 12%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Admit</th>
+<th style="text-align: center;">Gender</th>
+<th style="text-align: center;">Dept</th>
+<th style="text-align: center;">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Admitted</td>
+<td style="text-align: center;">Male</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">512</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Rejected</td>
+<td style="text-align: center;">Male</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">313</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Admitted</td>
+<td style="text-align: center;">Female</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">89</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Rejected</td>
+<td style="text-align: center;">Female</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">19</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Admitted</td>
+<td style="text-align: center;">Male</td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">353</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Rejected</td>
+<td style="text-align: center;">Male</td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">207</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Admitted</td>
+<td style="text-align: center;">Female</td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">17</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Rejected</td>
+<td style="text-align: center;">Female</td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Admitted</td>
+<td style="text-align: center;">Male</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">120</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Rejected</td>
+<td style="text-align: center;">Male</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">205</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Admitted</td>
+<td style="text-align: center;">Female</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">202</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Rejected</td>
+<td style="text-align: center;">Female</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">391</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Admitted</td>
+<td style="text-align: center;">Male</td>
+<td style="text-align: center;">D</td>
+<td style="text-align: center;">138</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Rejected</td>
+<td style="text-align: center;">Male</td>
+<td style="text-align: center;">D</td>
+<td style="text-align: center;">279</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Admitted</td>
+<td style="text-align: center;">Female</td>
+<td style="text-align: center;">D</td>
+<td style="text-align: center;">131</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Rejected</td>
+<td style="text-align: center;">Female</td>
+<td style="text-align: center;">D</td>
+<td style="text-align: center;">244</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Admitted</td>
+<td style="text-align: center;">Male</td>
+<td style="text-align: center;">E</td>
+<td style="text-align: center;">53</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Rejected</td>
+<td style="text-align: center;">Male</td>
+<td style="text-align: center;">E</td>
+<td style="text-align: center;">138</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Admitted</td>
+<td style="text-align: center;">Female</td>
+<td style="text-align: center;">E</td>
+<td style="text-align: center;">94</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Rejected</td>
+<td style="text-align: center;">Female</td>
+<td style="text-align: center;">E</td>
+<td style="text-align: center;">299</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Admitted</td>
+<td style="text-align: center;">Male</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">22</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Rejected</td>
+<td style="text-align: center;">Male</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">351</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Admitted</td>
+<td style="text-align: center;">Female</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">24</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Rejected</td>
+<td style="text-align: center;">Female</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">317</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="acceptance-rate-for-men-and-women" class="level2">
+<h2 class="anchored" data-anchor-id="acceptance-rate-for-men-and-women">Acceptance rate for men and women</h2>
+<p>The data is more readable now that it is in tidy format, but since it is split by department and displays raw counts, it is difficult for us to infer any kind of gender bias. To do that, we need to aggregate over department and ask ourselves, overall, what proportion of men and women were accepted into Berkeley in 1973.</p>
+<p>Here we make use of the <code>dplyr</code> package for all of our data manipulation tasks. We aggregate over department using the <code>group_by</code> function to get the total number of men and women who were accepted into or rejected from Berkeley that year, as well as the proportion accepted in each case. That will leave us in a better place to understand any accusations of gender bias.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading the dplyr library</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Aggregate over department</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>ucb_tidy_aggregated <span class="ot">&lt;-</span> ucb_tidy <span class="sc">%&gt;%</span> </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Admit, Gender) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">sum</span>(n)) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Gender) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Admit <span class="sc">==</span> <span class="st">"Admitted"</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Print aggregated dataset</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>ucb_tidy_aggregated</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+# Groups:   Gender [2]
+  Admit    Gender     n  prop
+  &lt;chr&gt;    &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;
+1 Admitted Female   557 0.304
+2 Admitted Male    1198 0.445</code></pre>
+</div>
+</div>
+</section>
+<section id="visualizing-the-discrepancy" class="level2">
+<h2 class="anchored" data-anchor-id="visualizing-the-discrepancy">Visualizing the discrepancy</h2>
+<p>From the previous task, we can see that <em>44.5% of male applicants</em> were accepted into Berkeley, as opposed to <em>30.4% of female applicants.</em> Now we can start to see the problem. Did Berkeley’s graduate admissions department really discriminate against women in 1973?</p>
+<p>Before we consider alternative explanations, let’s visualize the discrepancy through a simple bar chart using <code>ggplot2</code>. This won’t add much to our understanding of the problem right now, but it will act as a useful reference point later on.</p>
+<p>For clarity, we will format acceptance rate as a percentage using the percent function from the <code>scales</code> package.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the ggplot2 and scales packages</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare the bar plot</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>gg_bar <span class="ot">&lt;-</span> ucb_tidy_aggregated <span class="sc">%&gt;%</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Gender, <span class="at">y =</span> prop, <span class="at">fill =</span> Gender)) <span class="sc">+</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">percent</span>(prop)), <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Acceptance rate of male and female applicants"</span>,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">subtitle =</span> <span class="st">"University of California, Berkeley (1973)"</span>,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">"Acceptance rate"</span>) <span class="sc">+</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> percent, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">fill =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: The `&lt;scale&gt;` argument of `guides()` cannot be `FALSE`. Use "none" instead as
+of ggplot2 3.3.4.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the bar plot</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(gg_bar)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/fig1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="acceptance-rate-by-department" class="level2">
+<h2 class="anchored" data-anchor-id="acceptance-rate-by-department">Acceptance rate by department</h2>
+<p>The bar plot confirms what we already knew, a higher proportion of men were accepted than women. But what happens when we separate the graph out by department?</p>
+<p>Now we can return to our <code>ucb_tidy</code> dataset. After calculating the proportion of acceptances/rejections, we will plot a separate chart for each department using the <code>facet_wrap()</code> function in <code>ggplot2</code> This will give us an idea of how acceptance rates differ by department, as well as by gender.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate acceptance/rejection rate</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>ucb_by_dept <span class="ot">&lt;-</span> ucb_tidy <span class="sc">%&gt;%</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Gender, Dept) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">prop =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Admit <span class="sc">==</span> <span class="st">"Admitted"</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the dataset</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ucb_by_dept)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 12 × 5
+# Groups:   Gender, Dept [12]
+   Admit    Gender Dept      n   prop
+   &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt;  &lt;dbl&gt;
+ 1 Admitted Male   A       512 0.621 
+ 2 Admitted Female A        89 0.824 
+ 3 Admitted Male   B       353 0.630 
+ 4 Admitted Female B        17 0.68  
+ 5 Admitted Male   C       120 0.369 
+ 6 Admitted Female C       202 0.341 
+ 7 Admitted Male   D       138 0.331 
+ 8 Admitted Female D       131 0.349 
+ 9 Admitted Male   E        53 0.277 
+10 Admitted Female E        94 0.239 
+11 Admitted Male   F        22 0.0590
+12 Admitted Female F        24 0.0704</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare the bar plot for each department</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>gg_bar_faceted <span class="ot">&lt;-</span> ucb_by_dept <span class="sc">%&gt;%</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Gender, prop, <span class="at">fill =</span> Gender)) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">percent</span>(prop)), <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Acceptance rate of male and female applicants"</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"University of California, Berkeley (1973)"</span>,</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Acceptance rate"</span>) <span class="sc">+</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Dept)  <span class="sc">+</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the bar plot for each department</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(gg_bar_faceted)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/fig2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="alternative-explanations" class="level2">
+<h2 class="anchored" data-anchor-id="alternative-explanations">Alternative explanations</h2>
+<p>Now that we have separated out our analysis by department, the interpretation has changed rather dramatically. Although men were indeed more likely to be admitted into Departments C and E, women were more likely to be admitted into all other departments. So what’s really going on here?</p>
+<p>If you turn your attention to the first two plots, you can see that Department A and B were quite easy to get into. However, relatively few women applied to these departments – only 108 women applied to Department A, as opposed to 825 men!</p>
+<p>At this stage, we can hypothesise that the effect of gender on acceptance is null when you control for department. We can test that hypothesis using <strong>binary logistic regression,</strong> but first we need to de-aggregate the dataset so that each row represents one student. That should leave us with 4,526 rows – one row for each student who applied to Berkeley that year.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define function that repeats each row in each column n times</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>multiply_rows <span class="ot">&lt;-</span> <span class="cf">function</span>(column, n) {</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rep</span>(column, n)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create new de-aggregated data frame using the multiply_rows function</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>ucb_full <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Admit =</span> <span class="fu">multiply_rows</span>(ucb_tidy<span class="sc">$</span>Admit, ucb_tidy<span class="sc">$</span>n),</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>                      <span class="at">Gender =</span> <span class="fu">multiply_rows</span>(ucb_tidy<span class="sc">$</span>Gender, ucb_tidy<span class="sc">$</span>n),</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>                      <span class="at">Dept =</span> <span class="fu">multiply_rows</span>(ucb_tidy<span class="sc">$</span>Dept, ucb_tidy<span class="sc">$</span>n))</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the number of rows equals the number of students</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(ucb_full)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4526</code></pre>
+</div>
+</div>
+</section>
+<section id="binary-logistic-regression-part-i" class="level2">
+<h2 class="anchored" data-anchor-id="binary-logistic-regression-part-i">Binary logistic regression: part i</h2>
+<p>The data is now in the right format for us to do some hypothesis testing. Great! But first let’s try to predict admittance using gender alone. We will use the built-in <code>glm()</code> function to fit a generalised linear model, making sure to set <code>family = "binomial"</code> because the outcome variable is binary (<code>Admitted</code> or <code>Rejected</code>).</p>
+<p>By default, Admit is coded such that Admitted is level 1 and Rejected is level 2 (because of their alphabetical order). Since glm() will assume that level 2 represents ‘success’, we will reverse the coding of Admit so we are predicting the probability of admittance rather than rejection.</p>
+<p>To change the coding of a variable, you can use the <code>fct_relevel()</code> function from the <code>forcats</code> package.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the forcats library</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Reverse the coding of the Admit variable</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>ucb_full<span class="sc">$</span>Admit <span class="ot">&lt;-</span> <span class="fu">fct_relevel</span>(ucb_full<span class="sc">$</span>Admit, <span class="st">"Rejected"</span>, <span class="st">"Admitted"</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the regression</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>glm_gender <span class="ot">&lt;-</span> <span class="fu">glm</span>(Admit <span class="sc">~</span> Gender, <span class="at">data =</span> ucb_full, <span class="at">family =</span> <span class="st">"binomial"</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarize the results</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(glm_gender)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = Admit ~ Gender, family = "binomial", data = ucb_full)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.0855  -1.0855  -0.8506   1.2722   1.5442  
+
+Coefficients:
+            Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept) -0.83049    0.05077 -16.357   &lt;2e-16 ***
+GenderMale   0.61035    0.06389   9.553   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 6044.3  on 4525  degrees of freedom
+Residual deviance: 5950.9  on 4524  degrees of freedom
+AIC: 5954.9
+
+Number of Fisher Scoring iterations: 4</code></pre>
+</div>
+</div>
+</section>
+<section id="binary-logistic-regression-part-ii" class="level2">
+<h2 class="anchored" data-anchor-id="binary-logistic-regression-part-ii">Binary logistic regression: part ii</h2>
+<p>Sure enough, when you predict the probability of admission as a function of gender alone, the effect is statistically significant (p &lt; 0.01). Specifically, you are <code>exp(0.61035) = 1.84</code> times more likely to be admitted if you are a man. However, what happens if we control for department?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the regression, including Dept as an explanatory variable</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>glm_genderdept <span class="ot">&lt;-</span> <span class="fu">glm</span>(Admit <span class="sc">~</span> Gender <span class="sc">+</span> Dept, <span class="at">data =</span> ucb_full, <span class="at">family =</span> <span class="st">"binomial"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarize the results</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(glm_genderdept)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = Admit ~ Gender + Dept, family = "binomial", data = ucb_full)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.4773  -0.9306  -0.3741   0.9588   2.3613  
+
+Coefficients:
+            Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)  0.68192    0.09911   6.880 5.97e-12 ***
+GenderMale  -0.09987    0.08085  -1.235    0.217    
+DeptB       -0.04340    0.10984  -0.395    0.693    
+DeptC       -1.26260    0.10663 -11.841  &lt; 2e-16 ***
+DeptD       -1.29461    0.10582 -12.234  &lt; 2e-16 ***
+DeptE       -1.73931    0.12611 -13.792  &lt; 2e-16 ***
+DeptF       -3.30648    0.16998 -19.452  &lt; 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 6044.3  on 4525  degrees of freedom
+Residual deviance: 5187.5  on 4519  degrees of freedom
+AIC: 5201.5
+
+Number of Fisher Scoring iterations: 5</code></pre>
+</div>
+</div>
+</section>
+<section id="behold-simpsons-paradox" class="level2">
+<h2 class="anchored" data-anchor-id="behold-simpsons-paradox">Behold Simpson’s paradox</h2>
+<p>Finally, we can see Simpson’s paradox at play – when you control for the effect of department on the probability of admission, the effect of gender disappears. In fact, it even reverses, suggesting that – controlling for department – you were actually more likely to be admitted as a woman! However, this effect is not statistically significant (p &gt; 0.05), so we conclude that there was not a campus-wide bias against applicants of either gender in 1973.</p>
+<p>That said, individual departments often handle their own admissions processes, so it is plausible that bias exists in one department but not another. Let’s take a look at Department A, where 82.4% of women were admitted but only 62.1% of men. Is the difference statistically significant?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter for Department A</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>dept_a <span class="ot">&lt;-</span> ucb_full <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Dept <span class="sc">==</span> <span class="st">"A"</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the regression</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>glm_gender_depta <span class="ot">&lt;-</span> <span class="fu">glm</span>(Admit <span class="sc">~</span> Gender, <span class="at">data =</span> dept_a, <span class="at">family =</span> <span class="st">"binomial"</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarize the results</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(glm_gender_depta)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = Admit ~ Gender, family = "binomial", data = dept_a)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.8642  -1.3922   0.9768   0.9768   0.9768  
+
+Coefficients:
+            Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)   1.5442     0.2527   6.110 9.94e-10 ***
+GenderMale   -1.0521     0.2627  -4.005 6.21e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1214.7  on 932  degrees of freedom
+Residual deviance: 1195.7  on 931  degrees of freedom
+AIC: 1199.7
+
+Number of Fisher Scoring iterations: 4</code></pre>
+</div>
+</div>
+</section>
+<section id="bias-or-discrimination" class="level2">
+<h2 class="anchored" data-anchor-id="bias-or-discrimination">Bias or discrimination?</h2>
+<p>Well then! If we take Department A in isolation, we find there is a statistically significant bias in favour of women. So does that mean that the department discriminated against men?</p>
+<p>Not necessarily. After all, the bias might exist simply because the female applicants to Department A were better qualified that year. In their article dealing with this issue, Bickel, Hammel &amp; O’Connell (1975) define discrimination as “the exercise of decision influenced by the sex of the applicant when that is immaterial to the qualifications for entry”. Since we do not have any data on the respective qualifications of the candidates, we cannot say whether any gender bias in their admissions process amounted to discrimination.</p>
+<p>Although now more than 40 years old, the Berkeley problem is a useful reminder about the dangers of aggregation and omitted variable bias, especially in relation to matters of such legal and ethical importance as discrimination. Where bias does exist – as it does in the case of Department A – it is always worth considering whether there are any other factors that could explain the discrepancy.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define bias</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>bias <span class="ot">&lt;-</span> <span class="st">"A pattern of association between a particular decision and a particular sex of applicant, of sufficient strength to make us confident that it is unlikely to be the result of chance alon"</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define discrimination</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>discrimination <span class="ot">&lt;-</span> <span class="st">"The exercise of decision influenced by the sex of the applicant when that is immaterial to the qualifications for entry"</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Is bias equal to discrimination?</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>bias <span class="sc">==</span> discrimination</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+</div>
+<p>This project was completed as part of Datacamp projects</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
