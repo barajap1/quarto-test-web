@@ -3,7 +3,8 @@
     "listing": "/projects.html",
     "items": [
       "/projects/index.html",
-      "/projects/inequalities/index.html"
+      "/projects/inequalities/index.html",
+      "/projects/matplotlib_demo/index.html"
     ]
   },
   {

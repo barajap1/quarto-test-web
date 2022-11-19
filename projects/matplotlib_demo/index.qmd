@@ -1,5 +1,7 @@
 ---
-title: "matplotlib demo"
+title: "Matplotlib demo"
+author: "Pablo"
+date: 2022-11-19
 format:
   html:
     code-fold: true
