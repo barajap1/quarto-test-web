@@ -20,8 +20,5 @@ I studied XXXX at ZZZ university
 library(reticulate)
 ```
 
-install.package c("forcats","scales","ggplot2","dplyr", "broom","pander") 
-```{r}
-install.packages(c("forcats","scales","ggplot2","dplyr", "broom","pander", "rmarkdown"))
-```
+
 
