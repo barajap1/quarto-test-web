@@ -16,4 +16,4 @@ about:
       text: mygithubhandle
       href: https://github.com/
 ---
-In this website I will showcase some the projects I have worked on as well some of the different things I enjoy doing"
+In this website I will showcase some the projects I have worked on as well as some of the different things I enjoy doing"
